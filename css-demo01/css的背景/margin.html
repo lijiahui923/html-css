@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌套块元素</title>
+</head>
+<!-- 
+    外边距可以让(块级元素)盒子水平居中，但是要满足两个条件
+    1、盒子必须有宽度
+    2、盒子左右的外边距都设置auto
+
+    行内元素用text-align:center;
+
+
+
+
+    外边距合并（嵌套块元素垂直外边距的塌陷）谁的值大就执行谁的外边距
+    对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值
+
+    怎么解决？
+    1、可以为元素定义上边框
+    2、可以给父元素定义内边距
+    3、可以为父元素添加overflow:hidden
+
+    行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外边距，但是转换为块级和行内块元素就可以了
+ -->
+ <style>
+     .header {
+         width: 1200px;
+         margin: 0 auto;
+         text-align: center;
+         background-color: pink;
+     }
+
+     /* 这个样子就会造成元素塌陷 */
+     .father {
+         width: 400px;
+         height: 400px;
+         background-color: skyblue;
+         margin-top: 50px;
+         /* border: 1px solid transparent; */
+         /* padding: 1px; */
+         overflow: hidden;
+     }
+     .son {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        margin-top: 100px;
+     }
+     span {
+         background-color: violet;
+         margin: 20px;
+     }
+ </style>
+<body>
+    <div class="header"><span>文字</span></div>
+
+    
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <span>hahahah</span>
+</body>
+</html>

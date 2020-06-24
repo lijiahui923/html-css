@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one,
+        .left,
+        .right {
+            height: 100px;
+            width: 100px;
+            background-color: chartreuse;
+        }
+        .one {
+            /* 
+                如果有四个值就是顺时针   左右右下左下
+                如果是两个值就是对角线的关系
+            */
+            border-radius: 20px 40px;
+            /* 阴影有六个值 前面两个是必需的  h-shadow 水平阴影的位置  v-shadow 垂直阴影的位置
+                                             blur 模糊距离   spread 阴影尺寸  color 阴影颜色   inset 将外部阴影（outset）改为内部阴影
+                默认是外部阴影写了outset就不生效
+                阴影不占位置不影响大小
+            */
+            box-shadow: 10px 10px 10px 10px black;
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div>
+        <div class="left">青龙</div>
+        <div class="right">白虎</div>
+    </div>
+</body>
+</html>

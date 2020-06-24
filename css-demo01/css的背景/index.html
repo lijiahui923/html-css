@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 复合型写法没有顺序问题 background: color url() 是否平铺 是否滚动 背景的位置 */
+            background: url('./../images/29246320971058.jpg') no-repeat center 40px;
+        }
+        /* 
+        背景图片在实际开发常见于logo或者一些装饰品的小图片或者是超大的背景图片，优点是非常便于控制位置（精灵图也是一种运用场景）
+         */
+        div {
+            width: 200px;
+            height: 200px;
+            /* 半透明的背景色 */
+            background-color: rgba(233, 218, 218, .3);
+            /* 默认是这个所以是看不到 */
+            /* background-color: transparent; */
+            /* 默认背景平铺 (repeat)*/
+            background-image: url('./../images/headphoto.png');
+            background-repeat: no-repeat;
+            /* background-position: x y;如果是精确单位的话只写了一个值那么这个坐标一点是x,另外一个是center    也可以是方位名词 如果是方位名词值的 */
+            /* （混合单位）如果是前面的是方位名词的话就是水平  后面那个值就是垂直方向 */
+            /* background-position: center; */
+            background-position: 2px 5px;
+        }
+        span {
+            width: 30px;
+            height: 30px;
+            background-image: url('./../images/title_sprite.png');
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+        h3 {
+            width: 120px;
+            height: 40px;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 40px;
+            background-color: pink;
+            padding-left: 30px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .icon::after {
+            content: '';
+            background-image: url('./../images/title_sprite.png');
+            background-position: -30px 0px;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 1px;
+            top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <h3 class="icon">成长守护平台</h3>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+    <p>jahdhfqeuifn</p>
+</body>
+</html>

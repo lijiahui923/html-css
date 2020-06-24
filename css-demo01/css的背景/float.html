@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- 
+    为什么要清除浮动
+        因为很多时候不确定子元素的高度就不好给父元素设置高  （影响布局）
+
+    清除浮动
+    1、额外标签法  <div class="clear"></div>必须是块级元素 优点 通俗易懂，书写方便  缺点添加许多无意义的标签，结构化较差
+    2、给父亲添加overflow:hidden; 优点 代码简洁  缺点 无法显示溢出的部分
+    3、::after伪元素法  是额外标签法的升级版，也是给父元素添加
+    4、双伪元素清除浮动
+ -->
+ <style>
+     *{
+         margin: 0;
+         padding: 0;
+     }
+     .box {
+         background-color: cornflowerblue;
+         /* 清除浮动的第二种方法 */
+         /* overflow: hidden; */
+     }
+     .damao {
+         float: left;
+         width: 200px;
+         height: 200px;
+         background-color: pink;
+     }
+     .ermao {
+        float: left;
+         width: 200px;
+         height: 200px;
+         background-color: yellow;
+     }
+     .footer {
+         height: 500px;
+         background-color: yellowgreen;
+     }
+     .clear {
+         clear: both;
+     }
+     /* 清除浮动第三种 */
+     /* 因为after里面必须要有content 因为是一个行内元素  所以要转成块级元素 */
+     /* .clearfix::after{
+        content: '';
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+     } */
+     .clearfix {
+         /* ie6,7专用 */
+         *zoom: 1;
+     }
+     /* 清除浮动第四种 */
+     .clearfix::before,.clearfix::after {
+         content: '';
+         display: table;
+     }
+     .clearfix::after{
+         clear: both;
+     }
+
+ </style>
+<body>
+    <div class="box clearfix">
+        <div class="damao"></div>
+        <div class="ermao"></div>
+        <!-- 第一种清除浮动的方法 -->
+        <!-- <div class="clear"></div> -->
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
