@@ -1,0 +1,35 @@
+.w_1200 {
+    width: 1200px;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+}
+.header {
+    height: 42px;
+    background-color: pink;
+    margin: 30px auto;
+}
+.logo {
+    float: left;
+    width: 199px;
+    height: 42px;
+}
+.header-nav {
+    float: left;
+    margin-left: 65px;
+}
+.header-nav li {
+    float: left;
+    line-height: 42px;
+    padding: 0 8px;
+}
+.header-nav li a {
+    display: block;
+    color: #050505;
+    font-size: 18px;
+}
+.header-nav li a:hover {
+    margin-bottom: 11px;
+    border-bottom: 2px solid #00a4ff;
+}
