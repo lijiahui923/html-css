@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js强制转型</title>
+</head>
+<style media="print">
+@media print {
+    #container {
+        display: none;
+    }
+}
+</style>
+<body>
+    <!-- 
+        理解javaScript中的堆和栈
+        都是存放临时数据的地方
+
+
+        栈
+        栈是先进后出
+        例如：
+        let name = 'kiki';
+        name = 'lijiahui';
+        console.log(name); // lijiahui
+        1、栈内存互不影响
+        例如：
+        let a = '123';
+        let b = a; // 基本类型变量的复制，从一个变量向一个变量复制时，回在栈中创建一个新的值，然后把值赋值到信变量分配的位置上
+        b = 'hhhha';
+        console.log(b); // hhhha
+        console.log(a); // 123
+
+        堆
+        引用类型都是存放在堆内存里面的对象。也就是，变量中保存的实际上的只是一个指针，这个指针指向内存的另外一个位置，该位置保存这个对象。访问方式是按引用方式访问。
+        let a = new Object();
+        当操作时，需要先从栈中读取内存地址，然后在沿着指针找到保存在堆内存中共的值在操作。
+        b = a;
+        b.name = 'li';
+        console.log(a);{name:'li'}; // 因为她们指向的是一个地址
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        基础数据类型
+        string,boolean,null,number,undefined,symbol （栈）
+        特点：
+        1、基本数据类型的访问时
+
+        引用类型
+        Object在JS中除了基本数据类型以外的都是对象，数据是对象，函数是对象，正则表达式是对象）（堆） 只有引用类型才会存在浅拷贝和深拷贝
+
+        浅拷贝和深拷贝的区别???
+        判断：拷贝是否存在了新的数据还是拷贝的是数据的引用
+        知识点：对象数据存放的是对象在栈内存的隐月宫，直接复制的是对象的引用
+
+        // 常用的拷贝技术
+        浅拷贝（数组）
+        arr.concat(); 用于合并两个或两个以上的数组并且返回一个新的数组
+        arr.slice(); 用于返回一个新的数组不会改变原来的数组有两个参数
+        arr.slice(begin,end);//begin是从下标0还是的，end是结束的数字减一
+        （对象）
+        Object.assign();
+        let obj1 = {
+            name: 'lijiahui',
+            age: 3333333333,
+            eat: {
+                rice: '大米'
+            }
+        }
+        let obj2 = {
+            name: 'dabai',
+            age: 12,
+            play: {
+                ball: '篮球'
+            }
+        }
+        let obj = Object.assign(obj1,obj2);
+        console.log(obj); // 如果有一样的属性，后面的会覆盖前面的，没有的就加进去
+
+
+
+        // 深拷贝
+        JSON.parse(JSON.stringify(arr/obj)); 但是不能处理函数数据
+
+
+
+
+     -->
+    <script>
+        /**
+        *   强制类型转换---Boolean
+        *  除了 0，-0， “”（空字符串）,null,undefined,false,NaN返回false，其他都返回true
+        */
+        // 例如：
+        // let nu = null;
+        // console.log(Boolean(nu));
+
+        //  还有一种隐式转换  为任意的数据类型做两次非运算，即可将其转换为布尔值
+        // let str ="123";
+        // console.log(!!str);
+
+
+        /**
+            Number();
+        */
+        let str = '88';
+        let str1 = '00sdf'; // 如果混合了字符串就会NaN
+        // console.log(typeof Number(str));
+        // 第二种方式
+        // console.log(typeof +str);
+
+        // 不可靠的undefined    可靠的void(0);
+        // 就是undefiend在函数内，并且是在局部变量是可以赋上值的
+        // function foo1 () {
+        //     let undefined = 1;
+        //     console.log(undefined);
+        // }
+        // foo1(); // 1
+        
+
+        // 但是在函数外面定义一个全局的变量就，赋值不上去了
+        // var undefined;
+        // function foo2() {
+        //     undefined = 1;
+        //     console.log(undefined);
+        // }
+        // foo2(); // undefined
+
+        // 在js中经常是这个样子判断undefined  以后可以改成void(0) 或者 void 0
+        // 最常见的用法是通过void 0 运算来获得 undefined，表达式为 0 时的运算开销最小：
+        // let k;
+        // if (k === void 0) {
+        //     console.log(1);
+        // }
+        
+
+
+
+
+        let arr = [1,2,3,4,4];
+        let arr1 = JSON.parse(JSON.stringify(arr));
+        console.log(arr1);
+    </script>
+</body>
+</html>

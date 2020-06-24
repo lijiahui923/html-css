@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for 循环中打印</title>
+</head>
+<body>
+    <script>
+        // （还可以把var换成let这个样子就可以不用到闭包了哈哈哈哈哈）
+        // for (var i = 0; i < 4; i ++) {
+        //     setTimeout(function() {
+        //         console.log(i);
+        //     }, 300);
+        // }
+        // setTimeout会返回一个id，就是这个定时器的id，其实代码中已经创建了4个定时器，但是默认只返回一个id所以就会打印一个5
+        // 结果 打印4个4
+
+        // 如果想要打印出0，1，2，3
+        // 方法一
+        for (var i = 0; i < 4; i ++) {
+            setTimeout((function (e) {
+                return function () {
+                    console.log(e);
+                }
+            })(i), 300);
+        }
+        // 或者
+        for (var j = 0; j < 4; j ++) {
+            setTimeout((function(){
+                var temp = j;
+                return function () {
+                    console.log(temp);
+                }
+            })(), 300);
+        }
+        // 这个是通过自执行函数返回一个函数，然后在调用返回的函数去获取自执行函数内部的变量，此为闭包
+
+        // 方法二
+        for (var k = 0; k < 4; k ++) {
+            (function (k) {
+                setTimeout(function (){
+                    console.log(k);
+                }, 300);
+            })(k);
+        }
+    </script>
+</body>
+</html>

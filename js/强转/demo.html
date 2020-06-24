@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <object id="factory" style="display:none" viewastext
+        classid="clsid:1663ed61-23eb-11d2-b92f-008048fdd814"
+        codebase="http://www.meadroid.com/scriptx/ScriptX.cab#Version=5,60,0,360"
+        ></object>
+        <input type="button" value="页面设置" οnclick="factory.printing.PageSetup()">
+        <input type="button" value="打印预览" οnclick="factory.printing.Preview()">
+        
+        
+        <input type="button" value="打印本页" οnclick="factory.printing.Print(false)">
+        <input type="button" value="页面设置" οnclick="factory.printing.PageSetup()">
+        <input type="button" value="打印预览" οnclick="factory.printing.Preview()"><br>
+        <a href="http://www.meadroid.com/scriptx/docs/printdoc.htm?static" target="_blank">具体使用手册，更多信息，点这里</a>
+        WebBrowser.ExecWB(1,1);
+        Web.ExecWB(2,1);
+        Web.ExecWB(4,1);
+        Web.ExecWB(6,1);
+        Web.ExecWB(7,1);
+        Web.ExecWB(8,1);
+        Web.ExecWB(10,1);
+        Web.ExecWB(15,1);
+        Web.ExecWB(17,1);
+        Web.ExecWB(22,1);
+        Web.ExecWB(45,1);
+        <style media="print">
+        .Noprint{display:none;}
+        .PageNext{page-break-after: always;}
+        </style>
+        <object id="WebBrowser" width="0" height="0" classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2">   
+        </object>   
+        <center class="Noprint" >
+        <input type="button" value="打印" οnclick="document.all.WebBrowser.ExecWB(6,1)">
+        <input type="button" value="直接打印" οnclick="document.all.WebBrowser.ExecWB(6,6)">
+        <input type="button" value="页面设置" οnclick="document.all.WebBrowser.ExecWB(8,1)">
+        <p> <input type="button" value="打印预览" οnclick="document.all.WebBrowser.ExecWB(7,1)"></p>
+        </center>
+       
+        <input type="button" value="清空页码" οnclick="PageSetup_Null()">
+        <input type="button" value="恢复页码" οnclick="PageSetup_Default()">
+<script>
+    window.onload= function () {
+       factory.printing.SetMarginMeasure(2);
+       factory.printing.SetPageRange(false, 1, 3);
+       factory.printing.printer = "HP DeskJet 870C";
+       factory.printing.copies = 2;
+       factory.printing.collate = true;
+       factory.printing.paperSize = "A4";
+       factory.printing.paperSource = "Manual feed";
+       factory.printing.header = "居左显示&b居中显示&b居右显示页码，第&p页/共&P页";
+       factory.printing.footer = "（自定义页脚）"
+       factory.printing.portrait = false;
+       factory.printing.leftMargin = 0.75;
+       factory.printing.topMargin = 1.5;
+       factory.printing.rightMargin = 0.75;
+       factory.printing.bottomMargin = 1.5;;
+        function Print(frame) {
+            factory.printing.Print(true, frame);
+        }
+    }
+</script>
+<script>
+var HKEY_Root,HKEY_Path,HKEY_Key;
+HKEY_Root="HKEY_CURRENT_USER";
+HKEY_Path="//Software//Microsoft//Internet Explorer//PageSetup//";
+function PageSetup_Null() {
+        try {
+            var Wsh=new ActiveXObject("WScript.Shell");
+            HKEY_Key="header";
+            Wsh.RegWrite(HKEY_Root+HKEY_Path+HKEY_Key,"");
+            HKEY_Key="footer";
+            Wsh.RegWrite(HKEY_Root+HKEY_Path+HKEY_Key,"");
+        } catch(e){}
+    }
+    //设置网页打印的页眉页脚为默认值
+    function PageSetup_Default(){
+        try{
+            var Wsh=new ActiveXObject("WScript.Shell");
+            HKEY_Key="header";
+            Wsh.RegWrite(HKEY_Root+HKEY_Path+HKEY_Key,"&w&b页码,&p/&P");
+            HKEY_Key="footer";
+            Wsh.RegWrite(HKEY_Root+HKEY_Path+HKEY_Key,"&u&b&d");
+        }catch(e){}
+    }
+</script>
+</body>
+</html>
+<style>
+@media print{
+* {display:none}
+}
+</style>

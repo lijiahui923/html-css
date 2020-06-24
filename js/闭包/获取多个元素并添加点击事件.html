@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>获取多个元素并添加点击事件</title>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script>
+        /**
+        *  将一个变量长期驻扎在内存当中，可用于循环中存索引值
+        * 
+        * 在网页初始化时，每个按钮事件都已经绑定好了，用户触发都是后续触发的，说明触发事件有了，事件有了说明
+        * for循环执行完了，j就已经拿到了最大的值
+        */
+        var op = document.querySelectorAll('button');
+        for (var j = 0; j <op.length; j ++) {
+            (function(j){
+                op[j].onclick = function () {
+                console.log(j);
+            }
+            })(j);// 这个j就是循环的j
+        }
+        // 面向对象
+        function fun (n, o) {
+            console.log(o);
+            return {
+                fun: function (m) {
+                    return fun(m,n);
+                }
+            }
+        }
+        var a = fun(0);
+        a.fun(1);
+        a.fun(2);
+        a.fun(3);
+
+        var b = fun(0).fun(1).fun(2).fun(3);
+        var c = fun(0).fun(1);
+        c.fun(2);
+        c.fun(3);
+
+
+        function foo(x) {
+            var tmp = 3;
+            return function f2(y) {
+                alert(x + y + (++tmp));
+            }
+        }
+        var bar = foo(3);
+        bar(10);
+
+
+        function f1(a, b, c) {
+            // arguments是当前函数的参数列表 类似数组的集合 使用索引值来取
+            console.log(arguments.length); //3
+        }
+        f1(1,2,3);
+
+        var sum = function () {
+            var cache;
+            if (arguments.length === 1) {
+                cache = arguments[0];
+                return function(number) {
+                    return cache + number;
+                }
+            } else {
+                return arguments[0] + arguments[1];
+            }
+        }
+    </script>
+</body>
+</html>
