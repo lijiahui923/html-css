@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素的显示和隐藏</title>
+</head>
+<!-- 
+    display 属性用于设置一个元素应如何显示  display:none; 隐藏对象   display:block;除了类型转换为块级元素之外，同时还有显示元素的意思 
+    不保留原来的位置
+
+    visibility 可见性 visibility:visible; 元素显示  visibility: hidden; 元素隐藏
+    占有原来的位置
+
+    overflow 溢出 对溢出的元素显示和隐藏  overflow:hidden; 多余的隐藏 overflow:scoll;一直显示滚动条 overflow:auto;需要的时候添加滚动条
+    如果有定位的时候慎用overflow:hidden;因为它会隐藏多余的部分
+ -->
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .td_pc-card-image {
+        width: 444px;
+        height: 320px;
+        margin: 10px auto;
+        position: relative;
+    }
+    .td_pc-card-image img {
+        width: 100%;
+        height: 100%;
+        
+    }
+    .td_pc-card-image:hover:after {
+        content: '';
+        background-image: url('./../../images/视频播放.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+<body>
+    <div class="td_pc-card-image">
+        <img src="./../../images/新闻.jpg" alt="">
+    </div>
+</body>
+</html>

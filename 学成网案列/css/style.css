@@ -230,11 +230,18 @@ a {
     float: left;
     margin-right: 15px;
     margin-bottom: 15px;
+    position: relative;
+}
+.bd-item .hot {
+    top: 4px;
+    right: -4px;
+    position: absolute;
 }
 .bd-item:last-child {
     margin: 0;
 }
 .bd-item img {
+    /* 可以解决div和img之前的空白 */
     vertical-align: top;
 }
 .item-content h4 {

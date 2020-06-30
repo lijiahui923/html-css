@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图</title>
+</head>
+<!-- 
+    精灵技术的目的是
+        为了有效地减少服务器接收和发送请求地次数，提高页面地加载速度
+
+        缺点 
+        1、图片文件还是比较大的
+        2、图片本身放大和缩小会失真
+        3、一旦图片制作完毕更换非常复杂
+
+    使用核心
+    1、主要是针对背景图片的使用，就是把多个小背景图片整合到一张大图片上
+    2、移动背景图片的位置，此时可以使用background-position
+    3、一般都是负值
+ -->
+ <style>
+     * {
+         margin: 0;
+         padding: 0;
+     }
+     div {
+         width: 18px;
+         height: 14px;
+         margin: 100px auto;
+         background: url('./../../images/王者荣耀.png');
+         background-position:-252px -88px;
+     }
+     .name1,
+     .name2,
+     .name3 {
+        display: inline-block;
+        background-image: url('./../../images/26字母.jpg');
+        vertical-align: text-top;
+     }
+     .name1 {
+         width: 60px;
+         height: 95px;
+         background-position: -712px -999px;
+     }
+     .name2 {
+         width: 48px;
+         height: 100px;
+         background-position: -436px -1003px;
+     }
+     .name3 {
+         width: 65px;
+         height: 89px;
+         background-position: -169px -1007px;
+     }
+ </style>
+<body>
+    <div></div>
+
+    <span class="name1"></span>
+    <span class="name2"></span>
+    <span class="name3"></span>
+</body>
+</html>
