@@ -97,6 +97,9 @@ a {
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+.header-user .name {
+    vertical-align: top;
+}
 .banner {
     background-color: #1c036c;
     height: 421px;
