@@ -1,0 +1,16 @@
+{
+  "id": "1917595",
+  "name": "商城",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15463297",
+      "name": "箭头-下",
+      "font_class": "jiantou-xia",
+      "unicode": "e6ce",
+      "unicode_decimal": 59086
+    }
+  ]
+}

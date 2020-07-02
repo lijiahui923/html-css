@@ -1,0 +1,89 @@
+.main {
+    width: 980px;
+    height: 455px;
+    margin-left: 220px;
+    margin-top: 12px;
+}
+.focus {
+    float: left;
+    width: 721px;
+    height: 455px;
+}
+.nesflash {
+    float: right;
+    width: 250px;
+    height: 455px;
+    border: 1px solid #eee;
+}
+.news {
+    width: 100%;
+    height: 165px;
+}
+.news .letters {
+    height: 25px;
+    line-height: 25px;
+    margin: 0 15px;
+    border-bottom: 1px dotted #eee;
+    position: relative;
+}
+.letters span {
+    color: #666;
+    font-size: 14px;
+}
+.letters .more {
+    position: absolute;
+    right: 0;
+}
+.news-items {
+    margin-top: 10px;
+    margin-left: 25px;
+    color: #666;
+    font-size: 14px;
+}
+.news-items li{
+    line-height: 25px;
+}
+.lifeservice {
+    width: 100%;
+    height: 209px;
+    /* background-color: pink; */
+    border: 1px solid #eee;
+}
+.lifeservice ul li {
+    float: left;
+    width: 61.5px;
+    height: 69px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 12px;
+}
+.lifeservice ul li div {
+    width: 20px;
+    height: 20px;
+    margin: 20px 0 5px 20px;
+    background: url('./../images/images/正.png') no-repeat 50% 50%;
+}
+.bargain {
+    margin-top: 2px;
+}
+.bargain img {
+    width: 250px;
+    height: 76px;
+}
+.recom {
+    height: 162px;
+    margin-top: 13px;
+}
+.recom-hd {
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: #5c5251;
+}
+.recom-bd {
+    float: left;
+    width: 1000px;
+    height: 100%;
+    background-color: #ebebeb;
+}

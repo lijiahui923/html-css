@@ -5,7 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>三角强化</title>
 </head>
+<style>
+    .box {
+        width: 0;
+        height: 0;
+        border-top: 20px solid pink;
+        border-left: 10px solid palegreen;
+        border-right: 10px solid plum;
+        border-bottom: 0 solid palegoldenrod;
+    }
+
+    .price {
+        width: 160px;
+        height: 24px;
+        border: 1px solid red;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 24px;
+    }
+    .seconds-kill {
+        position: relative;
+        float: left;
+        width: 90px;
+        height: 100%;
+        background-color: red;
+        color: #fff;
+        font-weight: 700;
+    }
+    .seconds-kill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-color: transparent #fff transparent transparent;
+        border-style: solid;
+        border-width: 23.5px 10px 0 0;
+    }
+    .original-price {
+        color: #999;
+        text-decoration: line-through;
+    }
+</style>
 <body>
-    
+    <div class="box"></div>
+
+    <div class="price">
+        <span class="seconds-kill">¥49.00</span>
+        <span class="original-price">¥99.00</span>
+    </div>
 </body>
 </html>

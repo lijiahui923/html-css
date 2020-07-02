@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <!-- 
+        transition: 要过度的属性  花费时间 运动曲线 何时开始
+     -->
+     <style>
+         /* div {
+             height: 200px;width: 200px;
+             background-color: thistle;
+             transition: width 1s;
+         }
+         div:hover {
+             width: 400px;
+         } */
+
+         .bar {
+            height: 15px;width: 200px;
+            border: 1px solid red;
+            border-radius: 7px;
+            padding: 1px;
+         }
+         .bar_in {
+            height: 100%;width: 50%;
+            background-color: red;
+            transition: width 5s;
+         }
+         .bar:hover .bar_in {
+             width: 100%;
+         }
+
+
+         .nav-logo .logo{
+            position: relative;
+            display: block;
+            width: 55px;
+            height: 55px;
+            background-color: #ff6700;
+        }
+        .nav-logo .logo::after,.nav-logo .logo::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 55px;
+            width: 55px;
+            content: "";
+            transition: transform .3s;
+        }
+        .nav-logo .logo:after{
+            background: url('./../../images/mi-home.png') no-repeat 50% 50%;
+            margin-left: -55px;
+        }
+        .nav-logo .logo:before{
+            background: url('./../../images/mi-logo.png') no-repeat 50% 50%;
+        }
+        .nav-logo .logo:hover:after,.nav-logo .logo:hover:before{
+            transform: translate(55px);
+        }
+     </style>
+</head>
+<body>
+    <div></div>
+
+    <div class="bar">
+        <div class="bar_in"></div>
+    </div>
+
+    <div class="nav-logo">
+        <a href="#" class="logo"></a>
+    </div>
+</body>
+</html>
