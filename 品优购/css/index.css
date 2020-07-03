@@ -128,3 +128,49 @@
     font-size: 12px;
     color: #666;
 }
+.floor .w_1200{
+    margin-top: 30px;
+}
+.box_hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+    box-sizing: border-box;
+}
+.box_hd h3 {
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+    font-weight: 400;
+}
+.tab-list {
+    float: right;
+    line-height: 30px;
+}
+.tab-list ul li {
+    float: right;
+}
+.box_hd ul li a { 
+    margin: 0 15px;
+    font-size: 12px;
+}
+.box_hd ul li a:hover {
+    color: #c81623;
+}
+.box-bd {
+    height: 361px;
+}
+.tab_list_item > div {
+    float: left;
+}
+.col_w210 {
+    width: 210px;
+}
+.col_329 {
+    width: 329px;
+}
+.col_221 {
+    width: 221px;
+}
+.col_219 {
+    width: 219px;
+}
