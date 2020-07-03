@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换之缩放</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .pic {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            overflow: hidden;
+        }
+        .pic img {
+            width: 200px;height: 200px;
+            transition: all .5s;
+        }
+        .pic img:hover {
+            /* 
+                里面写的数字不跟单位，就是倍数的意思 1 就是一倍 2 就是两倍
+
+                不会影响其他盒子  可以设置中心点
+            */
+            transform: scale(1.5, 1);
+        }
+        ul {
+            list-style: none;box-sizing: border-box;
+        }
+        .list {
+            border: 1px solid #000;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+        }
+        .list ul li {
+            float: left;
+            border: 1px solid pink;
+            height: 20px;width: 20px;
+            border-radius: 50%;
+            margin: 15px;
+            text-align: center;
+            line-height: 20px;
+            transition: all .5s;
+            cursor: pointer;
+        }
+        .list ul li:hover {
+            transform: scale(2);
+        }
+    </style>
+</head>
+<body>
+    <div class="pic">
+        <img src="./../images/headphoto.png" alt="">
+    </div>
+
+    <div class="list">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+</body>
+</html>

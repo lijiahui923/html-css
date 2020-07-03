@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D转换(变形)平面</title>
+    <!-- 
+        同时位移和其他的属性的时候，需要把位移放到前面
+     -->
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            /* transform: translate(x,y); x是x轴 y是y轴 %是对于自身的宽度的多少  对于行内元素是无效的*/
+            /* transform: translate(-50%,-50%); */
+            position: relative;
+        }
+        p {
+            width: 200px;height: 200px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* margin-top: -100px;
+            margin-left: -100px; */
+            background-color: pink;
+            transition: all .5s;
+        }
+        p:hover {
+            transform: translate(-50%,-50%) rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p></p>
+    </div>
+</body>
+</html>

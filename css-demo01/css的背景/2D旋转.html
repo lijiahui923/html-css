@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D旋转</title>
+    <!-- 
+        rotate里面跟度数，单位是deg
+        正数时顺时针  负数是逆时针
+        默认旋转的中心点是元素的中心点
+        transform-origin: x y;  修改中心点
+        
+
+        过度写到本身上，谁做动画给谁加
+     -->
+     <style>
+         img {
+             width: 150px;
+             height: 150px;
+             border-radius: 50%;
+             border: 1px solid pink;
+             transition: all .5s;
+         }
+         img:hover {
+            transform: rotate(360deg);
+         }
+         div {
+             width: 300px;
+             height: 30px;
+             position: relative;
+             background-color: burlywood;
+         }
+         div input {
+            width: 300px;
+            height: 30px;
+         }
+         div::after{
+             content: '';
+             position: absolute;
+             width: 10px;height: 10px;
+             border-color: transparent  #000  #000 transparent;
+             border-style: solid;
+             border-width: 1px;
+             transform: rotate(45deg);
+             top: 9px;
+             right: 20px;
+         }
+     </style>
+</head>
+<body>
+    <img src="./../images/headphoto.png" alt="">
+
+    <div>
+        <input type="text">
+    </div>
+</body>
+</html>
