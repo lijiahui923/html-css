@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0">
+    <title>Document</title>
+    <!-- 就是原来我们要一个50*50的图片， 但是在iphone8上面会放大两倍也就是100*100 -->
+    <!-- 我们现在可以这个样子解决 就是我们放一个100*100的图片上去 然后写一个样式是50*50的这个样子就可以解决了 -->
+    <style>
+        img:nth-child(2) {
+            width: 50px;height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/50.jpg" alt="" srcset="">
+    <img src="./images/100.jpg" alt="">
+</body>
+</html>

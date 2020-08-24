@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        .test {
+            width: 200px;height: 200px;
+            background-color: plum;
+            /* 动画名称  持续时间 运动曲线 何时播放 播放次数 是否反方向 动画起始或者结束的状态
+                test     5s       linear    2s      3   alternate; // 正常与方向交替
+            */
+            animation: test 1s infinite;
+        }
+        @keyframes test {
+            10% {
+                background-color: rebeccapurple;
+                transform: rotate(30deg);
+            }
+            100% {
+                background-color: purple;
+                transform: translate(50%, 50%) rotate(180deg);
+            }
+        }
+
+        .map {
+            margin: 100px auto;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            position: relative;
+        }
+        .city {
+            position: absolute;
+            top: 227px;right: 193px;
+            color: #fff;
+        }
+        .dottod {
+            width: 8px;height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+        .city [class^="pulse"] {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px;height: 8px;
+            box-shadow: 0 0 12px #09f;
+            border-radius: 50%;
+            animation: pulse 3s linear  infinite;
+            z-index: 1;
+        }
+        .city div .pulse2 {
+            animation-delay: .4s;
+        }
+        .city div .pulse3 {
+            animation-delay: .8s;
+        }
+        @keyframes pulse {
+            0% {
+                
+            }
+            70% {
+                width: 40px;height: 40px;
+                opacity: 1;
+            }
+            100% {
+                width: 80px;height: 80px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div  class="test"></div>
+
+    <div class="map">
+        <div class="city">
+            <div class="dottod">
+                <div class="pulse1"></div>
+                <div class="pulse2"></div>
+                <div class="pulse3"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

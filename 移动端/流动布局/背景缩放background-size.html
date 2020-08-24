@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景缩放background-size</title>
+    <style>
+        div {
+            width: 400px;height: 600px;
+            border: 1px solid red;
+            background: url('./images/100.jpg') no-repeat;
+            /* 
+            1、如果写一个值就是宽度
+            2、如果写%就是相对父盒子来说的
+            3、cover 完全覆盖div盒子 可能有一部分看不到
+            4、contain 高度和宽度等比例拉神当宽度或者高度铺满div就不会来拉伸了 可能会有空白处
+             */
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <a href="#">sddddd</a>
+</body>
+</html>

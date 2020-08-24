@@ -1,0 +1,138 @@
+/* @import './xs.css' only screen and (max-width: 768px); */
+@import url(sm.css);
+@import './sm.css';
+@import './lg.css';
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+header {
+    padding-left: 0;
+}
+.logo {
+    background-color: #429ad9;
+}
+.logo img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.logo span {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.nav {
+    background-color: #eee;
+    border-bottom: 1px solid #666;
+}
+.nav a {
+    display: block;
+    color: #000;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 30px;
+    font-size: 16px;
+}
+.nav a:hover {
+    background-color: #fff;
+    color: #333;
+}
+.nav a:before {
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.new li {
+    float: left;
+    width: 25%;
+    height: 128px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+.new li a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.new li img {
+    width: 100%;
+    height: 100%;
+}
+.new li a p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    height: 41px;
+    margin: 0;
+    padding: 5px 10px;
+}
+.new li:first-child {
+    width: 50%;
+    height: 266px;
+    padding-left: 10px;
+}
+.new li:first-child p {
+    font-size: 16px;
+    padding: 0 10px;
+    line-height: 41px;
+}
+.publish {
+    border-top: 1px solid #eee;
+}
+.publish:last-child {
+    border-bottom: 1px solid #eee;
+}
+.publish .pic {
+    margin: 10px 0;
+}
+.pic img{
+    width: 100%;
+}
+.banner img{
+    width: 100%;
+}
+.hot {
+    margin-top: 10px;
+    display: block;
+    border: 2px solid #eee;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.hot span {
+    background-color: royalblue;
+    display: block;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+}
+.hot h4 {
+    white-space: nowrap;
+}
+.hot p {
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}

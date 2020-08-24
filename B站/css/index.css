@@ -1,0 +1,11 @@
+.b-logo {
+    height: 155px;
+    width: 100%;
+    background: url('./../images/448a1a6c720b36f296efde6b1e59a9aa604c62f0.png') no-repeat center;
+    background-size: cover;
+}
+.m-header {
+    height: 46px;
+    padding: 10px 24px;
+    background-color: cornflowerblue;
+}
